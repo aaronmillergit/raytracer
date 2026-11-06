@@ -1,12 +1,12 @@
 
 # Ray Tracer
 
-A physically-based, offline **CPU ray tracer written from scratch in C++**. It supports textured
+A physically-based, offline CPU ray tracer in C++. It supports textured
 primitives and triangle meshes, emissive materials, a BVH acceleration structure (aabb), stochastic
 sampling, OpenMP parallelism, and more.
 
 Built following Peter Shirley's *Ray Tracing in One Weekend* series as a foundation, then
-extended well beyond it. See [`Raytracer.pdf`](Raytracer.pdf) for the full write-up.
+extended beyond it. See [`Raytracer.pdf`](Raytracer.pdf) for the full write-up.
 
 ## Gallery
 
@@ -37,26 +37,25 @@ extended well beyond it. See [`Raytracer.pdf`](Raytracer.pdf) for the full write
 ## Features
 
 **Core rendering**
-- Recursive path tracing with a fully configurable camera (position, orientation, FOV, resolution)
-- Stochastic anti-aliasing (stratified sub-pixel sampling)
-- Ray–sphere, ray–triangle, and ray-quad intersection; UV-textured spheres and triangles
 - Ray intersections and UV texture mapping with spheres, triangles, and quads
+- Recursive path tracing with a configurable camera (position, orientation, FOV, resolution)
+- Stochastic anti-aliasing
 - Diffuse, specular, dielectric, and emissive materials.
-- Axis aligned bounding boxes for logarithmic-time intersection on complex scenes
+- Axis aligned bounding boxes for BVH
 
 **Camera effects**
 - Motion blur: time-paramaterized rays and objects. Objects follow arbitrary position functions with bounding boxes built from adaptive sampling of each function's range
 
-- Depth of field via thin-lens camera mode; configurable focus distance and defocus angle
+- Depth of field via thin-lens camera mode. Configurable focus distance and defocus angle
 
 **Advanced rendering**
-- Triangle mesh loading from OBJ files (via tinyobjloader)
-- Volumetric rendering (constant-density participating media)
+- Triangle mesh loading from OBJ files (tinyobjloader)
+- Volumetric rendering (constant-density)
 - Procedural textures from Perlin noise
 - Cube maps
 - Normal interpolation for smooth mesh shading
 - OpenMP CPU multithreading for per-pixel rendering
-- Object instancing (translate/reuse geometry)
+- Object instancing
 
 ## Building
 
